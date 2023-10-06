@@ -22,6 +22,10 @@
 
 ##### Classes (Variável-alvo)
 
-Os funcionários foram classificados em 
+Os funcionários foram classificados em classes com base na probabilidade de abandonar a empresa:
 
+- **Class A**: Alta probabilidade de sair.
+- **Class B**: Moderada probabilidade de sair.
+- **Class C**: Pouca probabilidade de sair.
 
+Essa classificação pode ajudar a entender quais fatores-chave podem contribuir para a rotatividade de funcionários e implementar estratégias de retenção e promoção da satisfação dos funcionários. 
