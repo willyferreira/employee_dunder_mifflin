@@ -3,7 +3,7 @@ SELECT
     Branch AS 'filial',
     COUNT(EmployeeID) AS 'qtd_funcionarios'
 FROM 
-    [DUNDER_MIFFLIN].[dbo].[employee]
+    [DUNDER_MIFFLIN].[dbo].[funcionarios]
 GROUP BY
     Branch
 ORDER BY

@@ -1,2 +1,2 @@
 SELECT *
-FROM [DUNDER_MIFFLIN].[dbo].[employee]
+FROM [DUNDER_MIFFLIN].[dbo].[funcionarios]
