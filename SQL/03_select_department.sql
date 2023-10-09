@@ -1,10 +1,10 @@
--- Quantidade de funcionários por filial da empresa
+-- Quantidade de funcionários por departamento
 SELECT 
-    Branch AS 'filial',
+    Department AS 'departamento',
     COUNT(EmployeeID) AS 'qtd_funcionarios'
 FROM 
     [DUNDER_MIFFLIN].[dbo].[employee]
 GROUP BY
-    Branch
+    Department
 ORDER BY
     COUNT(EmployeeID) DESC
