@@ -4,25 +4,41 @@
 -- Date: 16-out-2023 22:48
 -- SQL type: MS-SQL
 -- -------------------------------------
-CREATE TABLE [dunder_mifflin].employee (
-	EmployeeID integer PRIMARY KEY,
-	Branch varchar(13),
-	Tenure numeric(4,1),
-	Salary numeric(7,1),
-	Department varchar(24),
-	JobSatisfaction numeric(3,1),
-	WorkLifeBalance numeric(18,16),
-	CommuteDistance varchar(6),
-	MaritalStatus varchar(8),
-	Education varchar(11),
-	PerformanceRating numeric(18,16),
-	TrainingHours numeric(19,16),
-	OverTime varchar(4),
-	NumProjects numeric(18,16),
-	YearsSincePromotion numeric(4,1),
-	EnvironmentSatisfaction numeric(18,16),
-	ChurnLikelihood varchar(26)
-);
+USE [PORTIFOLIO]
+GO
+
+/****** Object:  Table [dunder_mifflin].[employee]    Script Date: 17/10/2023 20:22:13 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dunder_mifflin].[employee](
+	[EmployeeID] [smallint] NOT NULL,
+	[Branch] [nvarchar](50) NULL,
+	[Tenure] [int] NULL,
+	[Salary] [money] NULL,
+	[Department] [nvarchar](50) NULL,
+	[JobSatisfaction] [float] NULL,
+	[WorkLifeBalance] [float] NULL,
+	[CommuteDistance] [nvarchar](50) NULL,
+	[MaritalStatus] [nvarchar](50) NULL,
+	[Education] [nvarchar](50) NULL,
+	[PerformanceRating] [float] NULL,
+	[TrainingHours] [float] NULL,
+	[OverTime] [nvarchar](50) NULL,
+	[NumProjects] [float] NULL,
+	[YearsSincePromotion] [float] NULL,
+	[EnvironmentSatisfaction] [float] NULL,
+	[ChurnLikelihood] [nvarchar](50) NULL,
+ CONSTRAINT [PK_employee] PRIMARY KEY CLUSTERED 
+(
+	[EmployeeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
 -- Enumeration columns (optional)
 /*
 ALTER TABLE employee ADD CONSTRAINT CHK_Branch CHECK(Branch COLLATE Latin1_General_CS_AS IN ('Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Los Angeles', 'Miami', 'New York', 'Philadelphia', 'San Francisco', 'Scranton', 'Seattle'));
@@ -1065,7 +1081,7 @@ INSERT INTO [dunder_mifflin].employee (
 -- -------------------------------------
 -- insert records 1001 - 1543
 -- -------------------------------------
-INSERT INTO employee (
+INSERT INTO [dunder_mifflin].employee (
 	EmployeeID,
 	Branch,
 	Tenure,

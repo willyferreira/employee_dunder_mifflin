@@ -1,5 +1,6 @@
 -- Quantidade de funcionários por filial da empresa
 DECLARE @total_funcionarios INT = (SELECT COUNT(*) FROM [PORTIFOLIO].[dunder_mifflin].[employee])
+SELECT @total_funcionarios
 
 SELECT 
     Branch AS 'filial',
