@@ -4,7 +4,7 @@ SELECT
     PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY Salary) OVER(PARTITION BY Department) AS Mediana,
     PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY Salary) OVER(PARTITION BY Department) AS Terceiro_Quartil
 FROM
-    [DUNDER_MIFFLIN].[dbo].[funcionarios]
+    [PORTIFOLIO].[dunder_mifflin].[employee]
 
 
 
