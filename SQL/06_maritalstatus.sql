@@ -1,9 +1,9 @@
-DECLARE @total_funcionarios INT = (SELECT COUNT(*) FROM [PORTIFOLIO].[dunder_mifflin].[employee])
+DECLARE @total_funcionarios FLOAT = (SELECT COUNT(*) FROM [PORTIFOLIO].[dunder_mifflin].[employee])
 
 SELECT
     MaritalStatus AS estado_civil,
     COUNT(*) AS qtd_funcionarios,
-    FORMAT((COUNT(*) * 100 / @total_funcionarios), 'N2') AS Percent_Total
+    FORMAT(((COUNT(*) / @total_funcionarios) * 100), 'N2') AS '%_do_total'
 FROM
     [PORTIFOLIO].[dunder_mifflin].[employee]
 GROUP BY

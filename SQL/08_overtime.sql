@@ -1,12 +1,12 @@
 DECLARE @total_funcionarios FLOAT = (SELECT COUNT(*) FROM [PORTIFOLIO].[dunder_mifflin].[employee])
 
-SELECT 
-    JobSatisfaction AS satisfacao_trabalho,
+SELECT
+    IIF(OverTime IS NOT NULL, 'Sim', 'Não') AS hora_extra,
     COUNT(*) AS qtd_funcionarios,
-    FORMAT((COUNT(*) * 100 / @total_funcionarios), 'N2') AS '%_do_total'
-FROM 
+    FORMAT(((COUNT(*) / @total_funcionarios) * 100), 'N2') AS '%_do_total'
+FROM
     [PORTIFOLIO].[dunder_mifflin].[employee]
 GROUP BY
-    JobSatisfaction
+    OverTime
 ORDER BY
     COUNT(*) DESC
