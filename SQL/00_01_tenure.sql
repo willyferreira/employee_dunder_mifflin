@@ -18,6 +18,7 @@
 --     Tenure
 
 -- Criação de tabela temporária com as faixas da variável Tenure
+
 IF OBJECT_ID('tempDB..#dm_tenure', 'U') IS NOT NULL DROP TABLE #dm_tenure;
 SELECT
     EmployeeID,
@@ -32,18 +33,20 @@ SELECT
         ELSE 'Não identificado'
     END AS tempo_funcionario_faixa
 INTO #dm_tenure
-FROM [PORTIFOLIO].[dunder_mifflin].[employee]
+--FROM [PORTIFOLIO].[dunder_mifflin].[employee]
+FROM [PORTIFOLIO].[dbo].[employee]
 ORDER BY EmployeeID
 
 DECLARE @total_funcionarios FLOAT = (SELECT COUNT(*)
-FROM [PORTIFOLIO].[dunder_mifflin].[employee])
-
+--FROM [PORTIFOLIO].[dunder_mifflin].[employee])
+FROM [PORTIFOLIO].[dbo].[employee])
 
 SELECT
     t.tempo_funcionario_faixa,
     COUNT(e.EmployeeID) AS qtd_funcionarios,
     FORMAT(((COUNT(e.EmployeeID) / @total_funcionarios) * 100), 'N2') AS '%_do_total'
 FROM #dm_tenure AS t
-    LEFT JOIN [PORTIFOLIO].[dunder_mifflin].[employee] AS e ON e.EmployeeID = t.EmployeeID
+    --LEFT JOIN [PORTIFOLIO].[dunder_mifflin].[employee] AS e ON e.EmployeeID = t.EmployeeID
+    LEFT JOIN [PORTIFOLIO].[dbo].[employee] AS e ON e.EmployeeID = t.EmployeeID
 GROUP BY t.tempo_funcionario_faixa
 ORDER BY COUNT(e.EmployeeID) DESC
