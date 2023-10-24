@@ -6,6 +6,3 @@ SELECT
 FROM [PORTIFOLIO].[dunder_mifflin].[employee]
 GROUP BY Branch
 ORDER BY COUNT(*) DESC
-
-SELECT COUNT(*) FROM [PORTIFOLIO].[dunder_mifflin].[employee]
-WHERE Branch IS NOT NULL
