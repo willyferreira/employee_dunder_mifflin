@@ -1,8 +1,7 @@
 SELECT *
-FROM [PORTIFOLIO].[dbo].[employee]
+--FROM [PORTIFOLIO].[dbo].[employee]
 
--- FROM [PORTIFOLIO].[dunder_mifflin].[employee]
-
+FROM [PORTIFOLIO].[dunder_mifflin].[employee]
 WHERE 1 = 1
     --AND EmployeeID IS NULL -- (Sem registros)
     -- AND Branch IS NULL -- (8 funcionários)
@@ -19,5 +18,5 @@ WHERE 1 = 1
     -- AND OverTime IS NULL -- (100 funcionários)
     -- AND NumProjects IS NULL -- (99 funcionários)
     -- AND YearsSincePromotion IS NULL -- (1 funcionário)
-    -- AND EnvironmentSatisfaction IS NULL -- (28 funcionários)
+    AND EnvironmentSatisfaction IS NULL -- (28 funcionários)
     -- AND ChurnLikelihood IS NULL -- (Sem registros)

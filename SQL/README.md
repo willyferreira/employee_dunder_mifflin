@@ -27,3 +27,22 @@ Os funcionários foram classificados em classes com base na probabilidade de aba
 - **Class C**: Pouca probabilidade de sair.
 
 Essa classificação pode ajudar a entender quais fatores-chave podem contribuir para a rotatividade de funcionários e implementar estratégias de retenção e promoção da satisfação dos funcionários. 
+
+
+#### Descrição dos dados
+
+#### Importação dos daados para o SQL Server
+
+#### Filiais
+
+```
+DECLARE @total_funcionarios FLOAT = (SELECT COUNT(*) FROM [PORTIFOLIO].[dunder_mifflin].[employee])
+
+SELECT 
+    Branch AS filial, 
+    COUNT(*) AS qtd_funcionarios,
+    FORMAT((COUNT(*) * 100 / @total_funcionarios), 'N2') AS '%_do_total'
+FROM [PORTIFOLIO].[dunder_mifflin].[employee]
+GROUP BY Branch
+ORDER BY COUNT(*) DESC
+```
