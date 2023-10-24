@@ -1,7 +1,7 @@
 #### Tabela
 
 1. **EmployeeID**: Identificador único para cada funcionário.
-1. **EmployeeID**: Filial a qual o funcionário está lotado.
+1. **Branch**: Filial a qual o funcionário está lotado.
 1. **Tenure**: Quantidade de anos que o funcionário está na empresa.
 1. **Salary**: Salário anual do funcionário.
 1. **Department**: A área em que o empregado trabalha (exemplo: Sales, Accounting, Customer Service).
