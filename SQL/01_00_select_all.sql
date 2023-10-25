@@ -1,3 +1,3 @@
 SELECT *
---FROM [PORTIFOLIO].[dunder_mifflin].[employee]
-FROM [PORTIFOLIO].[dbo].[employee]
+FROM [PORTIFOLIO].[dunder_mifflin].[employee]
+-- FROM [PORTIFOLIO].[dbo].[employee]
